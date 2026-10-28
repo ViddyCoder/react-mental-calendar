@@ -72,7 +72,7 @@ function App() {
       <header className="site-header">
         <a className="brand" href="#" aria-label="DoomsDay home">
           <span className="brand-mark" aria-hidden="true">d.</span>
-          <span>doomsday</span>
+          <span>dayreckon</span>
         </a>
         <span className="header-note">A little mental magic</span>
       </header>
