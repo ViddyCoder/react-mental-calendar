@@ -1,32 +1,22 @@
-# React + TypeScript + Vite
+# Daymark
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Daymark is a small React app that demonstrates the Doomsday method for finding
+the weekday of a Gregorian date. Enter a date to see its century anchor, year
+calculation, monthly anchor, and final weekday.
 
-Currently, two official plugins are available:
+The calculator supports years **1600–9999**. It validates Gregorian month
+lengths and leap years before showing a result. The year calculation uses the
+Odd+11 method: adjust odd suffix values, halve, adjust odd results again, then
+convert the modulo-seven remainder to a century-anchor offset with `7 - r`.
+The app shows each intermediate value, including when an adjustment is
+skipped.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Development
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Run `npm run build` to type-check and create the production build, or
+`npm run lint` to lint the source.
